@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Support | Elm Roots LLC</title>
+
+<meta name="description" content="Support for Elm Roots LLC applications, including Ratings Now!. Contact us and find answers to common questions.">
+<meta name="author" content="Elm Roots LLC">
+<meta property="og:title" content="Elm Roots LLC — Support">
+<meta property="og:description" content="Get help with Elm Roots applications, including Ratings Now!.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://elmroots.com/support.html">
+
+<style>
+:root {
+  --ink: #15221b;
+  --muted: #536158;
+  --soft: #718076;
+  --line: #d8e2db;
+  --surface: #ffffff;
+  --surface-alt: #f3f7f3;
+  --accent: #2e7252;
+  --accent-dark: #123f2c;
+  --accent-pale: #dfede4;
+  --warm: #e9e3d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Text",
+    "SF Pro Display",
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner,
+.section-inner {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.header-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-alt);
+  flex: 0 0 auto;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-name {
+  display: grid;
+  line-height: 1.15;
+}
+
+.brand-name strong {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+
+.brand-name span {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.nav a:hover {
+  color: var(--accent-dark);
+}
+
+.page-hero {
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero .section-inner {
+  padding: 72px 0 60px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-family: Iowan Old Style, Baskerville, "Times New Roman", serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 21px);
+  max-width: 640px;
+  margin-bottom: 0;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.doc {
+  max-width: 760px;
+}
+
+h2 {
+  font-family: Iowan Old Style, Baskerville, "Times New Roman", serif;
+  font-size: clamp(26px, 3.4vw, 36px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+
+.doc h2 {
+  margin-top: 0;
+}
+
+.doc p {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.doc p a,
+.doc li a {
+  color: var(--accent-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.doc p a:hover,
+.doc li a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 20px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid var(--accent-dark);
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--accent-dark);
+  color: #ffffff;
+}
+
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #f7fbf8 100%);
+  box-shadow: 0 16px 36px rgba(21, 34, 27, 0.06);
+  margin-bottom: 28px;
+}
+
+.contact-card p {
+  margin-bottom: 14px;
+}
+
+.contact-card .button {
+  margin-top: 4px;
+}
+
+.meta {
+  color: var(--soft);
+  font-size: 15px;
+}
+
+.faq {
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 6px 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 40px 16px 0;
+  position: relative;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--accent);
+  transition: transform 160ms ease;
+}
+
+.faq details[open] summary::after {
+  content: "\2013";
+}
+
+.faq details p {
+  margin: 0 0 18px;
+}
+
+.faq details p:first-of-type {
+  padding-top: 2px;
+}
+
+ul.plain {
+  padding-left: 20px;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+ul.plain li + li {
+  margin-top: 8px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--soft);
+  font-size: 14px;
+}
+
+.footer-inner {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button,
+  .nav a,
+  .faq summary::after {
+    transition: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .header-inner,
+  .section-inner,
+  .footer-inner {
+    width: calc(100vw - 40px);
+    max-width: 1120px;
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+  .nav {
+    width: 100%;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .page-hero .section-inner {
+    padding: 52px 0 40px;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  h1 {
+    overflow-wrap: anywhere;
+  }
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Elm Roots LLC home">
+      <span class="brand-mark">
+        <img src="elm-tree.png" alt="Elm Roots LLC logo">
+      </span>
+      <span class="brand-name">
+        <strong>Elm Roots LLC</strong>
+        <span>Independent software company</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="/#products">Products</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy-policy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" aria-labelledby="support-title">
+    <div class="section-inner">
+      <p class="eyebrow">Support</p>
+      <h1 id="support-title">We're here to help.</h1>
+      <p class="lead">
+        Elm Roots is a small, independent software company. Every support request reaches us directly, and we read each one.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="section-inner doc">
+      <h2 id="contact-heading">Contact us</h2>
+      <div class="contact-card">
+        <p>
+          The fastest way to reach us is by email. We aim to reply within two to three business days.
+        </p>
+        <a class="button button-primary" href="mailto:apps@elmroots.com?subject=Support%20request">Email apps@elmroots.com</a>
+      </div>
+
+      <p><strong>To help us respond quickly, please include:</strong></p>
+      <ul class="plain">
+        <li>The app you're using (for example, Ratings Now!) and its version, shown on the app's About screen.</li>
+        <li>Your device model and iOS version (Settings &rsaquo; General &rsaquo; About).</li>
+        <li>A short description of what happened and what you expected instead.</li>
+      </ul>
+      <p class="meta">
+        Elm Roots LLC &middot; Austin, Texas, United States
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="section-inner doc">
+      <h2 id="faq-heading">Ratings Now! — common questions</h2>
+      <div class="faq">
+        <details>
+          <summary>How does Ratings Now! work?</summary>
+          <p>
+            Point your iPhone or iPad camera at a movie or show on your TV, pinch until the title is clear, and tap directly on the title text. The app reads the title and shows its rating and a simple verdict. You can also switch to voice mode and say a title instead.
+          </p>
+        </details>
+        <details>
+          <summary>Are my camera images or voice recordings uploaded?</summary>
+          <p>
+            No. Camera title recognition and voice recognition run on your device. Camera images are not uploaded, and no photos leave your phone. To look up a rating, the app sends only the identified title text to a ratings data provider &mdash; never your photo. See our <a href="/privacy-policy.html">Privacy Policy</a> for details.
+          </p>
+        </details>
+        <details>
+          <summary>A title wasn't recognized. What can I do?</summary>
+          <p>
+            Recognition depends on the title being clearly visible. Pinch to zoom until the title text is large and sharp, tap directly on the words of the title rather than the poster art, and reduce screen glare or reflections. If a title still isn't found, that honest &ldquo;no match&rdquo; is by design &mdash; the app avoids guessing the wrong title.
+          </p>
+        </details>
+        <details>
+          <summary>How do I restore my purchase on a new device?</summary>
+          <p>
+            Ratings Now! offers a one-time lifetime unlock. On a new device, open the app's settings, choose to unlock unlimited ratings, and select <strong>Restore Purchases</strong>. As long as you're signed in with the same Apple Account that made the purchase, your unlock will be restored at no additional charge.
+          </p>
+        </details>
+        <details>
+          <summary>How do I request a refund?</summary>
+          <p>
+            Purchases are processed by Apple, so refund requests are handled through Apple rather than Elm Roots. Visit <a href="https://reportaproblem.apple.com" rel="nofollow noopener" target="_blank">reportaproblem.apple.com</a>, sign in, and select the purchase to request a refund.
+          </p>
+        </details>
+        <details>
+          <summary>Is there an account or subscription?</summary>
+          <p>
+            No. Ratings Now! has no account to create and no subscription. There is a free allowance, an ongoing free daily rating, and an optional one-time lifetime unlock. There are no ads.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; <span id="year">2026</span> Elm Roots LLC. All rights reserved.</span>
+    <span class="footer-links">
+      <a href="/">Home</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:apps@elmroots.com">apps@elmroots.com</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
