@@ -418,37 +418,6 @@ h3 {
   text-decoration: underline;
 }
 
-.policy {
-  background: #f7f5ef;
-}
-
-.policy-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.policy article {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 28px;
-}
-
-.policy p,
-.policy li {
-  color: var(--muted);
-}
-
-.policy ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.policy li + li {
-  margin-top: 8px;
-}
-
 .site-footer {
   border-top: 1px solid var(--line);
   color: var(--soft);
@@ -463,20 +432,6 @@ h3 {
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
-}
-
-.footer-links {
-  display: flex;
-  gap: 18px;
-}
-
-.footer-links a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: var(--accent-dark);
 }
 
 /* Email addresses are stored reversed in the markup and flipped back here, so
@@ -562,8 +517,7 @@ h3 {
 
   .product-card,
   .info-grid,
-  .contact-grid,
-  .policy-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
@@ -609,8 +563,8 @@ h3 {
       <a href="#products">Products</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#terms">Terms</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/support.html">Support</a>
     </nav>
   </div>
 </header>
@@ -724,46 +678,11 @@ h3 {
     </div>
   </section>
 
-  <section class="section policy" aria-label="Policies">
-    <div class="section-inner policy-grid">
-      <article id="privacy" aria-labelledby="privacy-title">
-        <p class="eyebrow">Privacy Policy</p>
-        <h2 id="privacy-title">Website privacy</h2>
-        <p>
-          Elm Roots LLC does not collect personal information through this website unless you choose to contact us by email. If you email us, we use your message and email address only to respond to your inquiry.
-        </p>
-        <ul>
-          <li>This website does not provide user accounts.</li>
-          <li>This website does not sell personal information.</li>
-          <li>Individual applications may include their own privacy information when released.</li>
-        </ul>
-      </article>
-
-      <article id="terms" aria-labelledby="terms-title">
-        <p class="eyebrow">Terms of Use</p>
-        <h2 id="terms-title">Website terms</h2>
-        <p>
-          This website is provided by Elm Roots LLC for general company and product information. Information on this website may be updated as products are developed and released.
-        </p>
-        <ul>
-          <li>All company and product names belong to their respective owners.</li>
-          <li>Upcoming product descriptions are subject to change before release.</li>
-          <li>For questions about these terms, contact <a class="eml" data-u="apps" data-d="elmroots.com" aria-label="Email Elm Roots"><span class="eml-flip">moc.stoormle&#64;sppa</span></a>.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <span>© <span id="year">2026</span> Elm Roots LLC. All rights reserved.</span>
-    <span class="footer-links">
-      <a href="/support.html">Support</a>
-      <a href="/privacy-policy.html">Privacy Policy</a>
-      <a href="#terms">Terms of Use</a>
-      <a class="eml" data-u="apps" data-d="elmroots.com" aria-label="Email Elm Roots"><span class="eml-flip">moc.stoormle&#64;sppa</span></a>
-    </span>
   </div>
 </footer>
 
