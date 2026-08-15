@@ -354,6 +354,17 @@ ul.plain li + li {
   color: var(--accent-dark);
 }
 
+/* Email addresses are stored reversed in the markup and flipped back here, so
+   the plain address never appears in the HTML source for scrapers to harvest. */
+.eml-flip {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.eml {
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -448,7 +459,7 @@ ul.plain li + li {
         <p>
           The fastest way to reach us is by email. We aim to reply within two to three business days.
         </p>
-        <a class="button button-primary" href="mailto:apps@elmroots.com?subject=Support%20request">Email apps@elmroots.com</a>
+        <a class="button button-primary eml" data-u="apps" data-d="elmroots.com" data-s="Support request" aria-label="Email Elm Roots"><span class="eml-flip">moc.stoormle&#64;sppa</span></a>
       </div>
 
       <p><strong>To help us respond quickly, please include:</strong></p>
@@ -515,13 +526,26 @@ ul.plain li + li {
       <a href="/">Home</a>
       <a href="/support.html">Support</a>
       <a href="/privacy-policy.html">Privacy Policy</a>
-      <a href="mailto:apps@elmroots.com">apps@elmroots.com</a>
+      <a class="eml" data-u="apps" data-d="elmroots.com" aria-label="Email Elm Roots"><span class="eml-flip">moc.stoormle&#64;sppa</span></a>
     </span>
   </div>
 </footer>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Assemble email links at runtime from their parts, so no plain address or
+// mailto: string sits in the served HTML. Humans, keyboards, and screen
+// readers get a normal, working link; naive scrapers get nothing usable.
+document.querySelectorAll("a.eml").forEach(function (el) {
+  var addr = el.dataset.u + "@" + el.dataset.d;
+  var href = "mailto:" + addr;
+  if (el.dataset.s) href += "?subject=" + encodeURIComponent(el.dataset.s);
+  el.setAttribute("href", href);
+  el.setAttribute("aria-label", "Email " + addr);
+  var flip = el.querySelector(".eml-flip");
+  if (flip) flip.replaceWith(addr);
+});
 </script>
 </body>
 </html>
